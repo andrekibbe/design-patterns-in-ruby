@@ -1,6 +1,6 @@
 class Inventory
   include Enumerable
-  
+
   attr_reader :items
 
   def initialize
@@ -21,6 +21,10 @@ class Item
 
   def initialize
     @cost = 0
+  end
+
+  def <=>(other)
+    cost <=> other.cost
   end
 end
 
